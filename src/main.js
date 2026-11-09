@@ -3,6 +3,9 @@
 const GRID_SIZE = 192;
 // Canvas is GRID_SIZE × CELL_SIZE = 576px wide; CSS scales it to the square.
 const CELL_SIZE = 3;
+// Mona Lisa by Leonardo da Vinci (public domain), via Wikimedia Commons:
+// https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg
+const DEFAULT_TARGET_URL = 'assets/mona-lisa.jpg';
 
 let session;
 const adjustDialog = new AdjustDialog({ rotate: rotateImage });
