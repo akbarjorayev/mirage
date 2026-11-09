@@ -36,7 +36,7 @@ cd mirage
 npm start
 ```
 
-Then open <http://localhost:5173>.
+Then open <http://localhost:5173>. Opening `index.html` straight from disk won't work: browsers don't let a page read image pixels from `file://`.
 
 > Browsers only allow the camera on `https://` sites or `localhost`. If you open Mirage from another device over your local network, use **Upload** instead, or serve it over HTTPS.
 
@@ -53,8 +53,7 @@ src/
 │   ├── camera.js          Front camera, snaps a mirrored square
 │   ├── image-tools.js     Loading, rotating, cropping and sampling images
 │   ├── morph-animator.js  Draws the flying pixels
-│   ├── canvas-recorder.js Records the canvas to video
-│   └── default-target.js  The built-in Mona Lisa
+│   └── canvas-recorder.js Records the canvas to video
 ├── ui/                    Components: render state, report clicks, drops and pastes
 │   ├── photo-panel.js     Your photo and its toolbar
 │   ├── target-panel.js    The target picture and its toolbar
@@ -63,6 +62,7 @@ src/
 │   ├── paste-chooser.js   "Where should this pasted image go?"
 │   └── …                  Buttons and small helpers
 └── main.js                Wires everything together
+assets/mona-lisa.jpg       The built-in target picture
 ```
 
 `MorphSession` never touches the page. UI components subscribe to its state and call its methods, and devices (camera, animator, recorder) are passed in, which is what lets the tests run in Node with fakes.
