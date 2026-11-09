@@ -1,0 +1,8 @@
+node_modules/
+
+# Raw screen recordings stay local; the README uses docs/demo.gif.
+*.mp4
+*.webm
+
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+{
+  "name": "mirage",
+  "version": "1.0.0",
+  "description": "Turn your selfie into any picture by only rearranging your own pixels. Runs entirely in the browser.",
+  "private": true,
+  "license": "MIT",
+  "author": "Akbar Jorayev",
+  "scripts": {
+    "start": "npx --yes serve -l 5173 .",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

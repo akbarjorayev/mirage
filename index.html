@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Mirage</title>
+  <meta name="description" content="Turn your selfie into any picture by only rearranging your own pixels. Runs entirely in your browser.">
+  <!-- Plain <script> files, no build step: order matters, each file uses globals from the ones above it. -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <style>
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body class="group h-full overflow-x-hidden bg-white font-mono text-neutral-600 [-webkit-tap-highlight-color:transparent] [touch-action:manipulation] dark:bg-neutral-950 dark:text-neutral-400 md:overflow-hidden">
+  <!-- min-h-full: on very short phones the page scrolls instead of clipping. Padding clears notches and home bars. -->
+  <main id="app" class="flex min-h-full flex-col items-center justify-center gap-[5vmin] px-[max(1rem,env(safe-area-inset-left))] pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))] md:h-full md:flex-row"></main>
+
+  <!-- Logic (no DOM) -->
+  <script src="src/core/pixel-matcher.js"></script>
+  <script src="src/core/morph-session.js"></script>
+  <!-- Devices and canvas -->
+  <script src="src/media/default-target.js"></script>
+  <script src="src/media/image-tools.js"></script>
+  <script src="src/media/camera.js"></script>
+  <script src="src/media/morph-animator.js"></script>
+  <script src="src/media/canvas-recorder.js"></script>
+  <!-- UI components -->
+  <script src="src/ui/dom.js"></script>
+  <script src="src/ui/icon-button.js"></script>
+  <script src="src/ui/file-picker-button.js"></script>
+  <script src="src/ui/drop-square.js"></script>
+  <script src="src/ui/photo-panel.js"></script>
+  <script src="src/ui/target-panel.js"></script>
+  <script src="src/ui/page-drag-tracker.js"></script>
+  <script src="src/ui/paste-chooser.js"></script>
+  <script src="src/ui/adjust-dialog.js"></script>
+  <!-- Wiring -->
+  <script src="src/main.js"></script>
+</body>
+</html>
